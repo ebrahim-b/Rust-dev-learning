@@ -11,9 +11,10 @@ enum Animal_species {
     Mammal,
     Amphibian,
     Creepy,
-    Aquatic,
+    Aquatic(Aquatic_species),
 }
 
+#[derive(Debug)]
 enum Aquatic_species{
     Crab,
     Octopus,
@@ -28,6 +29,16 @@ struct Animal{
     location: Location,
 }
 
+impl Animal{
+    fn show(&self){
+        match &self.animal_species{
+            Animal_species::Aquatic(x) => println!("{:?} is a {:?} and live in {:?}",self.name,x,self.location),
+            _ => println!("{:?} is a {:?} and live in {:?}",self.name,self.animal_species,self.location),
+        }
+        
+    }
+}
+
 
 
 fn main() {
@@ -37,5 +48,13 @@ fn main() {
         location: Location::Ground,
     };
 
-    println!("{:?}",lion);
+
+    let clown_fish = Animal {
+        animal_species: Animal_species::Aquatic(Aquatic_species::Fish),
+        name: String::from("Clown Fish"),
+        location: Location::Water,
+    };
+    //println!("{:?}",lion);
+    lion.show();
+    clown_fish.show();
 }
