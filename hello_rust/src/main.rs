@@ -1,4 +1,9 @@
-mod var;
+//mod var;
+
+mod generics_tut;
+
 fn main() {    
-    var::run();
+    //var::run();
+
+    generics_tut::run();
 }
