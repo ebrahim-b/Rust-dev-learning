@@ -1,4 +1,23 @@
+struct Point<T,U> {
+    x:T,
+    y:U,
+}
+
+impl<T:std::fmt::Debug,U:std::fmt::Debug> Point<T,U>{
+    fn printing(&self){
+        println!("x: {:?} y: {:?}",self.x,self.y);
+    }
+}
+
+
 pub fn run(){
+    let p =Point{
+        x:12,
+        y:56.63,
+    };
+
+    p.printing();
+
     let x = 10;
     println!("{}",square_int(x));
 
