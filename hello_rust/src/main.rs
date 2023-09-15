@@ -9,16 +9,18 @@ fn main() {
 
     //generics_tut::run();
 
-    //enum_tut::run();
+    enum_tut::run();
 
-    let s ="Ebrahim";
+    /*let x;
 
-    println!("{:?}",s);
-    println!("{:?}",&s);
+    {
+        let y = "Hello".to_string();
+        x=y;
+    }
 
-    //println!("{:?}",*s);
+    println!("{}",x);
 
-    
+    */
 
 
 }
